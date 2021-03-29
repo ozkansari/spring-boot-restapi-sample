@@ -1,5 +1,5 @@
 language : java
-script : "mvn -f simplyecomm/pom.xml clean install"
+script : "mvn -f simplyecomm/pom.xml clean install cobertura:cobertura"
 jdk: 
    - oraclejdk11
 after_success:
