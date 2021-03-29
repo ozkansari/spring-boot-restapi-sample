@@ -1,0 +1,6 @@
+language : java
+script : "mvn -f simplyecomm/pom.xml clean install"
+jdk: 
+   - oraclejdk11
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
