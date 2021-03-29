@@ -1,4 +1,4 @@
-package com.ozkansari.sample.simplyecomm.testhelper;
+package com.ozkansari.sample.simplyecomm.helper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import com.ozkansari.sample.simplyecomm.api.helper.CheckoutHelper;
 import com.ozkansari.sample.simplyecomm.db.model.dto.ProductDiscountDTO;
+import com.ozkansari.sample.simplyecomm.testhelper.CommonTestBase;
 
 @DisplayName("Checkout Helper Test")
 class CheckoutHelperUnitTest extends CommonTestBase {
