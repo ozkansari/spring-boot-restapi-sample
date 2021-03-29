@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     
 	<parent>
-		<groupId>com.ozkansari.sample</groupId>
+		<groupId>com.ozkansari.sample.simplyecomm</groupId>
 		<artifactId>simplyecomm</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
@@ -20,6 +20,13 @@
 
     <dependencies>
     
+        <!-- INTERNAL DEPENDENCIES **************************** -->
+
+        <dependency>
+            <groupId>com.ozkansari.sample</groupId>
+            <artifactId>simplyecomm-persistence</artifactId>
+        </dependency>
+        
         <!-- SPRING DEPENDENCIES ****************************** -->
 
         <dependency>
@@ -59,11 +66,47 @@
             <artifactId>springdoc-openapi-hateoas</artifactId>
             <version>${openapi.version}</version>
         </dependency>
+        
+        <!-- TEST DEPENDENCIES ************************** -->
+        <dependency>
+            <groupId>org.springframework.restdocs</groupId>
+            <artifactId>spring-restdocs-mockmvc</artifactId>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
     
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>1.5.8</version>
+
+                <executions>
+                    <execution>
+                        <id>generate-docs</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>html</backend>
+                            <doctype>book</doctype>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework.restdocs</groupId>
+                        <artifactId>spring-restdocs-asciidoctor</artifactId>
+                        <version>${spring-restdocs.version}</version>
+                    </dependency>
+                </dependencies>
+
+            </plugin>
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>

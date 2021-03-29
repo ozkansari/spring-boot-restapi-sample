@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-		<groupId>com.ozkansari.sample</groupId>
+		<groupId>com.ozkansari.sample.simplyecomm</groupId>
 		<artifactId>simplyecomm</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
