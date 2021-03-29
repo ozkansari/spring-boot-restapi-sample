@@ -30,7 +30,7 @@ Project is formed as a Maven module based project that contains one module for P
 
 You can execute the following command to run the application
 
-    java -jar simplyecomm-api/target/simplyecomm-api-0.0.1-SNAPSHOT.jar -Dspring.profiles.active=default
+    java -jar simplyecomm-api/target/simplyecomm-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=default
     
 ### Building The Application
 
