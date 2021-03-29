@@ -26,7 +26,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.ozkansari.sample</groupId>
+                <groupId>com.ozkansari.sample.simplyecomm</groupId>
                 <artifactId>simplyecomm-persistence</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>

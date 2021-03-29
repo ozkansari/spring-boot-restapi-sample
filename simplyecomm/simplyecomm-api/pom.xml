@@ -23,7 +23,7 @@
         <!-- INTERNAL DEPENDENCIES **************************** -->
 
         <dependency>
-            <groupId>com.ozkansari.sample</groupId>
+            <groupId>com.ozkansari.sample.simplyecomm</groupId>
             <artifactId>simplyecomm-persistence</artifactId>
         </dependency>
         
