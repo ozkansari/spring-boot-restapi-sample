@@ -31,18 +31,9 @@ Or Run Maven Wrapper given inside the project. For more information about Maven 
 
 ### Testing The Application
 
-#### Run All Tests
-
 Code containing all tests that can be executed using maven test goal.
 
     .\mvnw test
-
-### Run Integration Tests
-
-Code containing integration tests that can only be executed in maven install phase and not in test phase.
-
-    .\mvnw install
-
 
 ### Extra Libraries
 
