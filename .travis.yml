@@ -1,13 +1,8 @@
 language : java
 sudo: false # faster builds
-script : "mvn -f simplyecomm/pom.xml clean package"
+script : "mvn -f simplyecomm/pom.xml clean package verify"
 jdk: 
    - oraclejdk11
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -f target/site/jacoco-aggregate/jacoco.xml
-  - bash <(curl -s https://codecov.io/bash) -f .\target\site\jacoco-aggregate\jacoco.xml
-  - bash <(curl -s https://codecov.io/bash) -f simplyecomm-reports/target/site/jacoco-aggregate/jacoco.xml
-  - bash <(curl -s https://codecov.io/bash) -f .\simplyecomm-reports\target\site\jacoco-aggregate\jacoco.xml
-  - bash <(curl -s https://codecov.io/bash) -f simplyecomm/simplyecomm-reports/target/site/jacoco-aggregate/jacoco.xml
-  - bash <(curl -s https://codecov.io/bash) -f .\simplyecomm\simplyecomm-reports\target\site\jacoco-aggregate\jacoco.xml
-  - bash <(pwd)
+  - bash <(curl -s https://codecov.io/bash) -f ./simplyecomm/simplyecomm-reports/target/site/jacoco-aggregate/jacoco.xml
+  - bash <(curl -s https://codecov.io/bash) -f /home/travis/build/ozkansari/spring-boot-restapi-sample/simplyecomm/simplyecomm-reports/target/site/jacoco-aggregate/jacoco.xml
