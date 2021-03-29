@@ -1,5 +1,6 @@
 language : java
-script : "mvn -f simplyecomm/pom.xml clean install cobertura:cobertura"
+sudo: false # faster builds
+script : "mvn -f simplyecomm/pom.xml clean package"
 jdk: 
    - oraclejdk11
 after_success:
