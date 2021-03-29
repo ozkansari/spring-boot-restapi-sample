@@ -1,6 +1,6 @@
 language : java
 sudo: false # faster builds
-script : "mvn -f simplyecomm/pom.xml clean package verify"
+script : "mvn -f simplyecomm/pom.xml clean test verify"
 jdk: 
    - oraclejdk11
 after_success:
