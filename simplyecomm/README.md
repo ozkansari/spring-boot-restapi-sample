@@ -13,6 +13,9 @@
 
 Heroku
 
+* [Swagger API Documentation](https://simplyecomm.herokuapp.com/restapidoc.html) 
+* [H2 Database Console](https://simplyecomm.herokuapp.com/h2-console/) 
+
 ### Project Structure
 
 Project is formed as a Maven module based project that contains one module for Persistence and another for Api Web Application that has dependency to Persistence module.
