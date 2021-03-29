@@ -9,6 +9,10 @@
 * [Swagger API Documentation](http://localhost:8082/restapidoc.html) 
 * [H2 Database Console](http://localhost:8082/h2-console/) 
 
+### Production Environment
+
+Heroku
+
 ### Project Structure
 
 Project is formed as a Maven module based project that contains one module for Persistence and another for Api Web Application that has dependency to Persistence module.
@@ -16,6 +20,8 @@ Project is formed as a Maven module based project that contains one module for P
     Simplified E-Commerce - Base                                       [pom]
     |-->Simplified E-Commerce - Persistence Module                     [jar]
     |-->Simplified E-Commerce - API (Runnable)                         [jar]
+    |-->Simplified E-Commerce - Report                                 [jar]
+
 
 ### Running The Application
 

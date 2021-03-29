@@ -1,0 +1,1 @@
+web: java -jar simplified-ecommerce-api/target/simplified-ecommerce-api-0.0.1-SNAPSHOT.jar -Dspring.profiles.active=prod -Dserver.port=$PORT $JAR_OPTS $JAVA_OPTS 
