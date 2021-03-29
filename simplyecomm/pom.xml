@@ -23,12 +23,28 @@
         <java.version>11</java.version>
     </properties>
     
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.ozkansari.sample</groupId>
+                <artifactId>simplyecomm-persistence</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
     <dependencies>
 
         <!-- TEST DEPENDENCIES ************************** -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.openpojo</groupId>
+            <artifactId>openpojo</artifactId>
+            <version>0.8.3</version>
             <scope>test</scope>
         </dependency>
 
@@ -47,4 +63,9 @@
 
     </dependencies>
 
+    <modules>
+        <module>simplyecomm-api</module>
+        <module>simplyecomm-persistence</module>
+</modules>
+    
 </project>

@@ -4,10 +4,11 @@
 
 ### Project Structure
 
-Project is formed as a Maven module based project:
+Project is formed as a Maven module based project that contains one module for Persistence and another for Api Web Application that has dependency to Persistence module.
 
-Simplified E-Commerce - Base                                       [pom]
-|-->Simplified E-Commerce - API (Runnable)                         [jar]
+    Simplified E-Commerce - Base                                       [pom]
+    |-->Simplified E-Commerce - Persistence Module                     [jar]
+    |-->Simplified E-Commerce - API (Runnable)                         [jar]
 
 ### Development Environment
 
@@ -34,6 +35,14 @@ Or Run Maven Wrapper given inside the project. For more information about Maven 
 Code containing all tests that can be executed using maven test goal.
 
     .\mvnw test
+
+### Database Initialization
+
+Application uses Liquibase library to manage database changes. 
+
+See [https://www.liquibase.org/](https://www.liquibase.org/) for more information.
+
+    classpath:/db/changelog/db.changelog-master.xml
     
 ------------------------------------------------------------
 
@@ -76,20 +85,23 @@ POST http://localhost:8080/checkout
     curl --insecure -X "POST" "http://localhost:8082/checkout/" -H "accept: application/json" -H "Content-Type: application/json" -d "["001",  "002",  "001",  "004",  "003"]"
 
 ##### Headers
-Accept: application/json
-Content-Type: application/json
+
+    Accept: application/json
+    Content-Type: application/json
 
 ##### Body
-[  "001",  "002",  "001",  "004",  "003" ]
+
+    [  "001",  "002",  "001",  "004",  "003" ]
 
 #### Response
 
 ##### Headers
-Content-Type: application/json
+
+    Content-Type: application/json
 
 ##### Body
 
-{ "price": 360 }
+    { "price": 360 }
 
 
     

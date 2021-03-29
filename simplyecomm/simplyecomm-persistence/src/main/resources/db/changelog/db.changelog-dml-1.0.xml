@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="ozkansari" id="20210328_initialize_table_values">
+        
+        <loadData encoding="UTF-8"
+                  file="db/changelog/products.csv"
+                  separator=","
+                  tableName="product">
+        </loadData>
+        
+        <insert tableName="discount" >
+            <column name="item_count" value="3"/>
+            <column name="discount_price" value="200.00"/>
+            <column name="product_id" computed="true" valueComputed="SELECT id FROM product WHERE serial_no = '001'" />
+        </insert>
+        
+        <insert tableName="discount" >
+            <column name="item_count" value="2"/>
+            <column name="discount_price" value="120.00"/>
+            <column name="product_id" computed="true" valueComputed="SELECT id FROM product WHERE serial_no = '002'" />
+        </insert>
+        
+    </changeSet>
+</databaseChangeLog>
