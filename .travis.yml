@@ -4,4 +4,4 @@ script : "mvn -f simplyecomm/pom.xml clean package"
 jdk: 
    - oraclejdk11
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -f ./simplyecomm/simplyecomm-reports/target/site/jacoco-aggregate/jacoco.xml
+  - bash <(curl -s https://codecov.io/bash)
