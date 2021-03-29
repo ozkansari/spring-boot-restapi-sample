@@ -1,8 +1,6 @@
 language : java
 sudo: false # faster builds
 script : "mvn -f simplyecomm/pom.xml clean test verify"
-env:
-   - CODECOV_TOKEN=='371790d9-13f5-4975-b177-9f0f9556bbf4'
 jdk: 
    - oraclejdk11
 after_success:
