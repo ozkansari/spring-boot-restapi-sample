@@ -1,8 +1,9 @@
 language : java
 sudo: false # faster builds
 script : "mvn -f simplyecomm/pom.xml clean test verify"
+env:
+   - CODECOV_TOKEN=='371790d9-13f5-4975-b177-9f0f9556bbf4'
 jdk: 
    - oraclejdk11
 after_success:
   - bash <(curl -s https://codecov.io/bash) -f ./simplyecomm/simplyecomm-reports/target/site/jacoco-aggregate/jacoco.xml
-  - bash <(curl -s https://codecov.io/bash) -f /home/travis/build/ozkansari/spring-boot-restapi-sample/simplyecomm/simplyecomm-reports/target/site/jacoco-aggregate/jacoco.xml
