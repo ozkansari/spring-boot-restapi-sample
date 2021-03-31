@@ -3,6 +3,7 @@
 ## TECHNICAL INFORMATION
 
 [![Build Status](https://www.travis-ci.com/ozkansari/spring-boot-restapi-samples.svg?branch=master)](https://www.travis-ci.com/ozkansari/spring-boot-restapi-samples)
+[![codecov](https://codecov.io/gh/ozkansari/spring-boot-restapi-samples/branch/master/graph/badge.svg?token=H2RK1SKWNU)](https://codecov.io/gh/ozkansari/spring-boot-restapi-samples)
 
 ### Development Environment
 
