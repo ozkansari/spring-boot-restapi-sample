@@ -2,7 +2,7 @@
 
 ## TECHNICAL INFORMATION
 
-[![Build Status](https://www.travis-ci.com/ozkansari/spring-boot-restapi-sample.svg?branch=master)](https://www.travis-ci.com/ozkansari/spring-boot-restapi-sample)
+[![Build Status](https://www.travis-ci.com/ozkansari/spring-boot-restapi-samples.svg?branch=master)](https://www.travis-ci.com/ozkansari/spring-boot-restapi-samples)
 
 ### Development Environment
 
