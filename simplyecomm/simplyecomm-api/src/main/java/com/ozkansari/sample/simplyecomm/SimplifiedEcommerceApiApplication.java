@@ -30,7 +30,7 @@ public class SimplifiedEcommerceApiApplication {
      * @param e any throwable 
      * @throws Throwable if not handled here 
      */
-    private static void handleThrowable(Throwable e) throws Throwable {
+    protected static void handleThrowable(Throwable e) throws Throwable {
         if(e.getClass().getName().contains("SilentExitException")) {
             // skipping for spring known bug https://github.com/spring-projects/spring-boot/issues/3100
             log.warn("Spring is restarting the main thread - See spring-boot-devtools");

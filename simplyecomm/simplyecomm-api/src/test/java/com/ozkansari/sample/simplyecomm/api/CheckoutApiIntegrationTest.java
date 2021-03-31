@@ -47,6 +47,24 @@ class CheckoutApiIntegrationTest extends CommonTestBase {
     @MockBean private DiscountDAO discountDAO;
     
     @Test
+    @DisplayName("Test Perform Checkout APi Call With Empty Input -> Should Get Exception ")
+    final void testPerformCheckoutWithEmptyInput() throws Exception {
+
+        // When
+        String postRequestContent = "[]";
+        ResultActions restApiCall = this.mockMvc
+                .perform(
+                    post(CheckoutApi.API_CHECKOUT_BASE_URL + "/")
+                    .content(postRequestContent)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .accept(MediaType.APPLICATION_JSON)
+                );
+        
+        restApiCall.andDo(print()).andExpect(status().isBadRequest());
+
+    }
+    
+    @Test
     @DisplayName("Test Perform Checkout APi Call -> Should Get ")
     final void testPerformCheckout() throws Exception {
         
@@ -63,7 +81,9 @@ class CheckoutApiIntegrationTest extends CommonTestBase {
                 + "\"001\","
                 + "\"001\"," + 
                 "  \"004\"," + 
-                "  \"003\"" + 
+                "  \"003\"," +
+                "  \"\"," +
+                "  \" \"" + 
                 "]";
         
         // When

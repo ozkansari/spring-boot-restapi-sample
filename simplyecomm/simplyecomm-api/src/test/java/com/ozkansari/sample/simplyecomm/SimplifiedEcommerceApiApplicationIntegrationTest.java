@@ -2,12 +2,15 @@ package com.ozkansari.sample.simplyecomm;
 
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,11 +20,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @SpringBootTest
-class SimplifiedEcommerceApiApplicationTest {
+class SimplifiedEcommerceApiApplicationIntegrationTest {
 
     @Autowired
     private ApplicationContext applicationContext;
 
+    @DisplayName("Bootstrap spring application and check context and beans")
     @Test
     void contextLoads() {
     	assertNotNull(applicationContext);
@@ -37,6 +41,31 @@ class SimplifiedEcommerceApiApplicationTest {
         beanTester.checkIfBeanExists("discountDAO");
         beanTester.checkIfBeanExists("productDAO");
     }
+    
+    @DisplayName("Test handleThrowable With RuntimeException -> Should Throw it back")
+    @Test
+    void testHandleThrowableWhenRuntimeException() {
+    	Assertions.assertThrows(RuntimeException.class, () -> {
+    		SimplifiedEcommerceApiApplication.handleThrowable(new RuntimeException());
+    	});
+    }
+    
+    @DisplayName("Test handleThrowable With SilentExitException -> Should Ignore")
+    @Test
+    void testHandleThrowableWhenSilentExitException() {
+    	boolean exceptionThrown = false;
+    	try {
+			SimplifiedEcommerceApiApplication.handleThrowable(new SilentExitException());
+		} catch (Throwable e) {
+			exceptionThrown = true;
+		}
+    	assertFalse(exceptionThrown);
+    }
+    
+    /** Normally this is a private class in Spring. Dummy version created for testing purposes */
+    private static class SilentExitException extends RuntimeException {
+		private static final long serialVersionUID = 1L;
+	}
     
     private static class BeanTester {
         

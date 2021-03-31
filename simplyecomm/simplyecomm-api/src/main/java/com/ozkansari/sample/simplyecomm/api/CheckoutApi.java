@@ -45,9 +45,9 @@ public class CheckoutApi implements CheckoutApiBase {
         }
         
         if (serialNos == null || serialNos.length == 0) {
-        	String msg = messageHelper.toLocale("checkoutapi.performCheckout.error.emptyRequest");
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, msg) ;
-		}
+            String msg = messageHelper.toLocale("checkoutapi.performCheckout.error.emptyRequest");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, msg) ;
+        }
          
         Map<String, Long> orderCountsBySerialNo = Arrays.stream(serialNos)
                 .filter(sn -> sn != null && !sn.isBlank()) 
