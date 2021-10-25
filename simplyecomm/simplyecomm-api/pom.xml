@@ -15,7 +15,7 @@
     <description>Simplified E-Commerce API Project</description>
 
     <properties>
-        <openapi.version>1.5.9</openapi.version>
+        <openapi.version>1.5.11</openapi.version>
     </properties>
 
     <dependencies>
